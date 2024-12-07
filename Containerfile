@@ -1,4 +1,4 @@
-FROM fedora
+FROM fedora:latest
 RUN dnf -yqq install nginx hostname &>/dev/null  && \
     echo "Hello, from container $(hostname)" > /usr/share/nginx/html/index.html && \
     sed -i '/::*80/s/^/#/' /etc/nginx/nginx.conf && \
